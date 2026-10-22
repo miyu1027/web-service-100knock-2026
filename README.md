@@ -50,3 +50,23 @@ git commit -m "Initial commit"
 
 e923a6a9a3f1473a787a6b7d04a4a229083648cc
 
+
+
+
+
+\#02
+
+\##認証確認した結果
+
+C:\\Users\\miyu\_\\web-service-100knock-2026>ssh -T git@github.com
+
+Hi miyu1027! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+
+\##GitHubの「Settings → SSH and GPG keys」に鍵が登録された画面のスクリーンショット
+
+
+
+
+
