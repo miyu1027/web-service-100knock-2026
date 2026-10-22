@@ -107,10 +107,20 @@ C:\Users\miyu_\web-service-100knock-2026>git status -sb
 ## main...origin/main
 ```
 
-## 05. .gitignoreファイルの作成
+# 05. .gitignoreファイルの作成
 
 ### 無視するファイルとその理由
 
 - `node_modules/`：依存パッケージが大量に含まれ、必要に応じて再インストールできるため。
 - `.env`：APIキーやパスワードなどの秘密情報が含まれる可能性があるため。
 - `.DS_Store`：macOSのFinderが作成するメタデータであり、プロジェクト自体には不要なため。
+
+# 06. ブランチの作成と切り替え
+
+### 実行したコマンド
+
+1. `git branch` 現在のブランチ確認
+2. `git branch develop` developブランチ作成
+3. `git switch develop` developブランチに切り替え
+
+課題06はすべてdevelopブランチ上で書いた。
