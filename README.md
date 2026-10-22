@@ -67,3 +67,17 @@ Hi miyu1027! You've successfully authenticated, but GitHub does not provide shel
 \##GitHubの「Settings → SSH and GPG keys」に鍵が登録された画面のスクリーンショット
 !\[SSHキー登録画面](screenshots/github-ssh-keys.png)
 
+
+
+\#03 ローカルリポジトリとGitHubリポジトリの連携
+
+\## git remote -v の結果
+
+C:\\Users\\miyu\_\\web-service-100knock-2026>git remote -v
+
+origin  git@github.com:miyu1027/web-service-100knock-2026.git (fetch)
+
+origin  git@github.com:miyu1027/web-service-100knock-2026.git (push)
+
+
+
