@@ -106,3 +106,11 @@ cbe7180 Add SSH setup screenshots
 C:\Users\miyu_\web-service-100knock-2026>git status -sb
 ## main...origin/main
 ```
+
+## 05. .gitignoreファイルの作成
+
+### 無視するファイルとその理由
+
+- `node_modules/`：依存パッケージが大量に含まれ、必要に応じて再インストールできるため。
+- `.env`：APIキーやパスワードなどの秘密情報が含まれる可能性があるため。
+- `.DS_Store`：macOSのFinderが作成するメタデータであり、プロジェクト自体には不要なため。
