@@ -65,8 +65,5 @@ Hi miyu1027! You've successfully authenticated, but GitHub does not provide shel
 
 
 \##GitHubの「Settings → SSH and GPG keys」に鍵が登録された画面のスクリーンショット
-
-
-
-
+!\[SSHキー登録画面](screenshots/github-ssh-keys.png)
 
