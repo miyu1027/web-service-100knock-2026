@@ -87,3 +87,7 @@ origin  git@github.com:miyu1027/web-service-100knock-2026.git (push)
 
 ローカルから編集し、git add、git commit、git pushでGitHubに反映しました。
 
+
+### GitHub上での編集
+
+GitHub上でREADME.mdを直接編集し、git pullでローカルに反映しました。
