@@ -124,3 +124,10 @@ C:\Users\miyu_\web-service-100knock-2026>git status -sb
 3. `git switch develop` developブランチに切り替え
 
 課題06はすべてdevelopブランチ上で書いた。
+
+# 07. Pull Request（PR）の作成
+<img width="586" height="121" alt="webservice100knockkadai07-1" src="https://github.com/user-attachments/assets/44303cf3-dcbe-4f5b-bc6a-14942f51ab39" />
+
+<img width="661" height="331" alt="webservice100knockkadai07-2" src="https://github.com/user-attachments/assets/61181c85-00b4-4201-9fa7-fba8558e8fe3" />
+
+<img width="666" height="391" alt="webservice100knockkadai07-3" src="https://github.com/user-attachments/assets/ce3263e7-9402-4cd5-848c-e4130fd1ae15" />
