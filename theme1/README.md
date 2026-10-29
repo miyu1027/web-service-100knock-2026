@@ -138,6 +138,7 @@ GETとは違うのは、自分でデータを作ってサーバーに送る（PO
 ※PowerShellなので、curl.exeにしました。(curlだけだと別のものと勘違いされる)
 ※PowerShellでも確実にJSON文字列を渡せるように、--data-binaryを使用
 
+
 送信データ：data.json
 ```
 {
