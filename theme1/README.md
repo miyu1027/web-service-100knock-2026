@@ -134,17 +134,18 @@ PS C:\Users\miyu_\web-service-100knock-2026\theme1> curl.exe -v https://httpbin.
 curlコマンドで https://httpbin.org/post にJSONデータをPOSTし，レスポンス内容を確認せよ．
 Content-Type: application/json ヘッダーを付けた場合と付けない場合で，レスポンスのjson／form欄がどう変わるか比較すること．
 
-GETとは違うのは、自分でデータを作ってサーバーに送る（POSTする）こと。
+GETとは違うのは、自分でデータを作ってサーバーに送る（POSTする）こと。-X POST：POSTメソッドを指定
 ※PowerShellなので、curl.exeにしました。(curlだけだと別のものと勘違いされる)
 ※PowerShellでも確実にJSON文字列を渡せるように、--data-binaryを使用
 
 送信データ：data.json
+```
 {
     "age": 23,
     "course": "media",
     "name": "Miyu"
   }
-
+```
 
 ### Content-Type: application/json ヘッダーを付けない場合
 ```
