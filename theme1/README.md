@@ -50,4 +50,89 @@ Google Chrome等のデベロッパーツール（Networkタブ）を使い，あ
 curlコマンドを使って https://httpbin.org/get にGETリクエストを送り，返ってきたレスポンスを確認せよ．
 -v（または-i）オプションを付けた場合との違いも確認すること．
 
+通常版(レスポンス本文としてJSON形式のデータが表示された。)
+```
+PS C:\Users\miyu_\web-service-100knock-2026\theme1> curl.exe https://httpbin.org/get
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/8.21.0"
+  },
+  "method": "GET",
+  "origin": "124.154.139.143",
+  "url": "https://httpbin.org/get"
+}
+```
+-iオプション(レスポンスヘッダーとレスポンス本文が表示された。)
+```
+PS C:\Users\miyu_\web-service-100knock-2026\theme1> curl.exe -i https://httpbin.org/get
+HTTP/1.1 200 OK
+access-control-allow-credentials: true
+access-control-allow-origin: *
+access-control-expose-headers: Retry-After, RateLimit, RateLimit-Policy
+content-length: 203
+content-type: application/json
+x-content-type-options: nosniff
+date: Thu, 29 Oct 2026 17:34:34 GMT
+
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/8.21.0"
+  },
+  "method": "GET",
+  "origin": "124.154.139.143",
+  "url": "https://httpbin.org/get"
+}
+```
+-vオプション(リクエストヘッダー、レスポンスヘッダー、接続に関する詳細な情報が表示された。)
+```
+PS C:\Users\miyu_\web-service-100knock-2026\theme1> curl.exe -v https://httpbin.org/get
+* Host httpbin.org:443 was resolved.
+* IPv6: (none)
+* IPv4: 16.58.42.220, 18.227.178.96, 3.137.48.32
+*   Trying 16.58.42.220:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* Established connection to httpbin.org (16.58.42.220 port 443) from 192.168.0.19 port 64379
+* using HTTP/1.x
+> GET /get HTTP/1.1
+> Host: httpbin.org
+> User-Agent: curl/8.21.0
+> Accept: */*
+>
+* Request completely sent off
+< HTTP/1.1 200 OK
+< access-control-allow-credentials: true
+< access-control-allow-origin: *
+< access-control-expose-headers: Retry-After, RateLimit, RateLimit-Policy
+< content-length: 203
+< content-type: application/json
+< x-content-type-options: nosniff
+< date: Thu, 29 Oct 2026 17:34:46 GMT
+<
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/8.21.0"
+  },
+  "method": "GET",
+  "origin": "124.154.139.143",
+  "url": "https://httpbin.org/get"
+}
+* Connection #0 to host httpbin.org:443 left intact
+```
+
+# 13. curlコマンドでPOSTリクエストを送る
+curlコマンドで https://httpbin.org/post にJSONデータをPOSTし，レスポンス内容を確認せよ．
+Content-Type: application/json ヘッダーを付けた場合と付けない場合で，レスポンスのjson／form欄がどう変わるか比較すること．
+
+GETとは違うのは、自分でデータを作ってサーバーに送る（POSTする）こと。
 
