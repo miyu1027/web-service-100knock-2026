@@ -24,17 +24,30 @@ HTTP（Hypertext Transfer Protocol、ハイパーテキスト・トランスフ�
 	- コネクションマイグレーション: Wi-Fiからモバイル回線へ切り替わっても、IPアドレスの変化を吸収して接続維持可能。
 - HTTPSとの違い：HTTPとHTTPSの違いは通信が暗号化されていないか暗号化されているかの違いで、HTTPSが暗号化されている。HTTPSはHTTPにSSL/TLSという暗号化技術を組み合わせた仕組みであり、通信全部が暗号化される。
 
-## 課題一覧
 
-- 課題01：
+# 11. ブラウザのデベロッパーツールで通信を観察する
+Google Chrome等のデベロッパーツール（Networkタブ）を使い，あるWebページ（例：https://example.com）にアクセスしたときのリクエスト・レスポンスヘッダーの内容を確認せよ．
 
-- 課題02：
+確認方法：ブラウザの該当ページで右クリック → "検証"選択 → 上部のバーから"ネットワーク"選択 → ブラウザを更新 → 通信の名前をクリック
 
-- 課題03：
+- 基本情報
+  - Request URL（実際に表示されたURL）：https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=AACAAQ/d=0/rs=AN8SPfoThpppAXpRoF1hV9gBo6v0GkdBdw/m=el_main_css
+  - Request Method（例：GET）：GET
+  - Status Code（実際に表示されたステータスコード）：200 OK
+
+- リクエストヘッダー
+  - user-agent(ブラウザやOSなど、リクエストを送信したクライアントの情報)：Mozilla/5.0 (Linux; Android 16; Pixel 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36
+  - Accept(クライアントが受け入れ可能なコンテンツの種類を示す。)：text/css,*/*;q=0.1
+  - Accept-Language(クライアントが希望する言語を示す。)：ja,en-US;q=0.9,en;q=0.8
+
+- レスポンスヘッダー
+  - content-type(レスポンス本文のデータ形式や文字コード)：text/css; charset=UTF-8
+  - Content-Length(レスポンス本文のサイズをバイト単位で示す)：4160
+  - Cache-Control(レスポンスをキャッシュする際の扱いを指定する)：public, max-age=31536000
 
 
+# 12. curlコマンドでGETリクエストを送る
+curlコマンドを使って https://httpbin.org/get にGETリクエストを送り，返ってきたレスポンスを確認せよ．
+-v（または-i）オプションを付けた場合との違いも確認すること．
 
-## 実施記録
-
-各課題の実施内容、実行結果、考察などを記録する。
 
