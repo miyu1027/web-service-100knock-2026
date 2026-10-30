@@ -264,3 +264,18 @@ content-type: text/html; charset=utf-8
 x-content-type-options: nosniff
 date: Thu, 29 Oct 2026 18:23:28 GMT
 ```
+
+# 15. 任意のWebサイトに対してHEADリクエストを送る
+curl（curl -I）または他の方法でHEADリクエストを送り，ヘッダーのみを取得せよ．
+```
+PS C:\Users\miyu_\web-service-100knock-2026\theme1> curl.exe -I https://httpbin.org/get
+HTTP/1.1 200 OK
+access-control-allow-credentials: true
+access-control-allow-origin: *
+access-control-expose-headers: Retry-After, RateLimit, RateLimit-Policy
+content-length: 204
+content-type: application/json
+x-content-type-options: nosniff
+date: Fri, 30 Oct 2026 02:05:27 GMT
+```
+-I はHEADリクエストを送るオプション。HEADはGETと同じようにリソースの情報を要求するけれど、レスポンスのボディを受け取らず、ヘッダーのみを取得するためのメソッド
