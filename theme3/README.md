@@ -76,4 +76,6 @@ while (index < colors.length) {
 }
 ```
 
+コンソール出力結果のスクリーンショット
+
 <img width="606" height="333" alt="image" src="https://github.com/user-attachments/assets/59ac2132-fb38-4717-b3a1-35072875bebf" />
