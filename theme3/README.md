@@ -67,6 +67,12 @@ for (let i = 0; i < colors.length; i++) {
   console.log(colors[i]);
 }
 
+// for...of文を使った全要素の出力
+console.log("◆for...of文の出力");
+for (const color of colors) {
+  console.log(color);
+}
+
 // while文を使った全要素の出力（おまけ）
 console.log("◆while文の出力");
 let index = 0;
@@ -77,7 +83,16 @@ while (index < colors.length) {
 ```
 for文
 
-初期化、繰り返し条件、更新処理を1行にまとめている、配列のインデックスを使って要素を取り出す。
+・初期化、繰り返し条件、更新処理を1行にまとめている、配列のインデックスを使って要素を取り出す。
+
+
+for of 文　(for文との大きな違いは、インデックス番号を自分で指定しなくてよいこと)
+
+・const color	配列から取り出した要素を格納する変数
+
+・of colors	配列colorsから要素を取り出す
+
+・console.log(color)	取り出した要素を出力する
 
 
 while文
@@ -87,4 +102,5 @@ while文
 
 コンソール出力結果のスクリーンショット
 
-<img width="606" height="333" alt="image" src="https://github.com/user-attachments/assets/59ac2132-fb38-4717-b3a1-35072875bebf" />
+<img width="292" height="293" alt="image" src="https://github.com/user-attachments/assets/fd5b99fe-acd5-4273-b03a-6513ab8f1657" />
+
