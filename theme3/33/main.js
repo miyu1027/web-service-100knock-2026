@@ -7,6 +7,12 @@ for (let i = 0; i < colors.length; i++) {
   console.log(colors[i]);
 }
 
+// for...of文を使った全要素の出力
+console.log("◆for...of文の出力");
+for (const color of colors) {
+  console.log(color);
+}
+
 // while文を使った全要素の出力（おまけ）
 console.log("◆while文の出力");
 let index = 0;
