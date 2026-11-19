@@ -50,8 +50,58 @@ node server.js
 - `/api/greet` というパスにGETリクエストが来た際，`{"message": "Hello!"}` のようなJSONレスポンスを返すAPIを実装すること．
 - `/api/greet?name=Ushiama` のようにnameパラメータが付いた場合は，`{"message": "Hello, Ushiama!"}` を返すこと．
 
-\*\*提出物\*\*
+**提出物**
 
 - ソースコード
 - パラメータあり・なし両方のcurlコマンド例と結果
 
+server.jsのソースコードは以下の通り(フォルダ42にもある)
+```
+
+const express = require("express");
+
+// Expressアプリケーションを作成
+const app = express();
+
+// ポート番号
+const PORT = 3000;
+
+// GETリクエストに対応するAPI APIのURLを指定する!
+// app.get()は、指定したパスにGETリクエストが送られたときの処理を定義するもの。今回は/api/greetというURLに対応
+app.get("/api/greet", (req, res) => {
+
+    // クエリパラメータからnameを取得
+    // ?：クエリパラメータの開始、name：パラメータの名前、Koike：パラメータの値
+    // Expressではreq.query.nameと書くことで、Koikeという値を取得できる
+
+    const name = req.query.name;
+
+    // nameが指定されている場合。今回はJSONを返すのでres.json()
+    if (name) {
+        res.json({
+            message: `Hello, ${name}!`
+        });
+    } else {
+        // nameが指定されていない場合
+        res.json({
+            message: "Hello!"
+        });
+    }
+});
+
+// サーバを起動
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
+
+```
+
+サーバはこのコードをコマンドで実行して起動
+```
+node server.js
+```
+
+
+別コマンドを開いて、サーバ動かした結果
+
+<img width="557" height="52" alt="image" src="https://github.com/user-attachments/assets/f14aa47a-a606-4d7b-bbb4-c1f9ee95b726" />
