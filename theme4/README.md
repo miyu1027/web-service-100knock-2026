@@ -9,6 +9,41 @@ APIとは、ソフトウェアやプログラム、webサービスをつなぐ�
 ### 41. シンプルなHTTPサーバ
 - Node.jsとExpressを使い，「Hello, API!」と返すだけのHTTPサーバを実装すること．
 
+コードはフォルダ41内に。
+```
+
+const express = require("express");
+
+// Expressアプリケーションを作成
+const app = express();
+
+// ポート番号を設定
+const PORT = 3000;
+
+// GETリクエストを受け取ったときの処理
+app.get("/", (req, res) => {
+    res.send("Hello, API!");
+});
+
+// HTTPサーバを起動
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
+
+```
+サーバ確認
+```
+node server.js
+```
+
+
+もう一つコマンドを開いてcurl動作確認
+
+結果
+<img width="425" height="32" alt="image" src="https://github.com/user-attachments/assets/1c95f22d-d984-425b-91e7-ac8a46cb4995" />
+
+
+
 
 ### 42. GETリクエストとクエリパラメータに対応したAPIの作成
 
