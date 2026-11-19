@@ -105,3 +105,109 @@ node server.js
 別コマンドを開いて、サーバ動かした結果
 
 <img width="557" height="52" alt="image" src="https://github.com/user-attachments/assets/f14aa47a-a606-4d7b-bbb4-c1f9ee95b726" />
+
+
+
+### 43. POSTリクエストでのデータの受け取りとJSONでの応答
+
+- `/api/echo` というパスで，POSTされたJSONデータをそのまま返すAPIを実装すること．
+- `express.json()` ミドルウェアの役割を確認すること．
+
+
+コード
+```
+
+const express = require("express");
+
+// Expressアプリケーションを作成
+const app = express();
+
+// ポート番号
+const PORT = 3000;
+
+// JSON形式のリクエストデータを受け取るための設定
+app.use(express.json());
+
+// POSTリクエストに対応するAPI
+app.post("/api/echo", (req, res) => {
+
+    // 受け取ったデータをそのまま返す
+    res.json(req.body);
+
+});
+
+// サーバを起動
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
+
+```
+
+結果
+
+<img width="632" height="41" alt="image" src="https://github.com/user-attachments/assets/033b71bd-c47d-4e3c-8c1f-6cdbfc76d81c" />
+
+
+### 44. 一覧を返すAPIの実装
+
+- `/api/items` というパスにGETリクエストが来た場合，`id`と`name`を持つオブジェクトの配列をJSONで返すAPIを実装すること．
+
+**提出物**
+- ソースコード
+- curlまたはブラウザでの動作確認結果
+
+
+
+### 45. パスパラメータでデータを取得するAPIの作成
+
+- `/api/items/2` のように，URLの一部をパスパラメータとして受け取り，該当するデータを返すAPIを実装すること．
+- 該当データが存在しない場合は，ステータスコード404とエラーメッセージ（JSON）を返すこと．
+
+**提出物**
+- ソースコード
+- 存在するID・存在しないIDそれぞれの動作確認のcurlコマンド例と結果
+
+
+
+### 46. POSTでデータを追加するAPIの作成
+
+- `/api/items` にPOSTリクエストで新しいアイテムを追加し，追加したアイテムをステータスコード201で返すAPIを実装すること．
+- `name`が空の場合は400を返すなど，簡単な入力チェックを行うこと．
+- サーバ側で配列などを用いて簡易的に管理すればよい．
+
+**提出物**
+- ソースコード
+- curlコマンド等でデータ追加後の動作確認結果（`curl -i`でステータスコードも示す）
+
+
+
+### 47. PUT（またはPATCH）でデータを更新するAPIの作成
+
+- `/api/items/2` のようなパスにPUT（またはPATCH）リクエストが来た場合，該当アイテムの内容を更新して返すAPIを実装すること．
+- PUTとPATCHの違いを一言まとめること．
+
+**提出物**
+- ソースコード
+- curlコマンド等で更新前後の動作確認結果
+
+
+
+### 48. DELETEメソッドでデータを削除するAPIの作成
+
+- `/api/items/2` のようなパスにDELETEリクエストが来た場合，該当アイテムを削除するAPIを実装すること．
+- 成功時は204（No Content），該当がない場合は404を返すこと．
+
+**提出物**
+- ソースコード
+- curlコマンド等で削除後の動作確認結果
+
+
+
+### 49. APIドキュメントの作成
+
+- 作成したAPIの各エンドポイントの仕様（パス，メソッド，パラメータ，サンプルリクエスト/レスポンス，ステータスコード）をREADME.mdに整理して記述すること．
+- Markdown形式で表やリストを用いてもよい．余力があればOpenAPI（YAML）形式でも記述してみること．
+
+**提出物**
+- APIドキュメント（README.md，任意で`openapi.yaml`）
+
