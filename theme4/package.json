@@ -1,0 +1,16 @@
+{
+  "name": "theme4",
+  "version": "1.0.0",
+  "description": "API（Application Programming Interface）について調査し，REST APIの特徴や仕組み（リソース，URL，HTTPメソッド，ステータスコードの対応）について200字程度でまとめること．",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
